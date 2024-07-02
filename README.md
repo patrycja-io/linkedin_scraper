@@ -1,50 +1,24 @@
 # Linkedin Scraper
 
-Scrapes Linkedin User Data
+Zbiera dane użytkowników LinkedIn
 
-[Linkedin Scraper](#linkedin-scraper)
-* [Installation](#installation)
-* [Setup](#setup)
-* [Usage](#usage)
-  + [Sample Usage](#sample-usage)
-  + [User Scraping](#user-scraping)
-  + [Company Scraping](#company-scraping)
-  + [Job Scraping](#job-scraping)
-  + [Job Search Scraping](#job-search-scraping)
-  + [Scraping sites where login is required first](#scraping-sites-where-login-is-required-first)
-  + [Scraping sites and login automatically](#scraping-sites-and-login-automatically)
-* [API](#api)
-  + [Person](#person)
-    - [`linkedin_url`](#linkedin_url)
-    - [`name`](#name)
-    - [`about`](#about)
-    - [`experiences`](#experiences)
-    - [`educations`](#educations)
-    - [`interests`](#interests)
-    - [`accomplishment`](#accomplishment)
-    - [`company`](#company)
-    - [`job_title`](#job_title)
-    - [`driver`](#driver)
-    - [`scrape`](#scrape)
-    - [`scrape(close_on_complete=True)`](#scrapeclose_on_completetrue)
-  + [Company](#company)
-    - [`linkedin_url`](#linkedin_url-1)
-    - [`name`](#name-1)
-    - [`about_us`](#about_us)
-    - [`website`](#website)
-    - [`headquarters`](#headquarters)
-    - [`founded`](#founded)
-    - [`company_type`](#company_type)
-    - [`company_size`](#company_size)
-    - [`specialties`](#specialties)
-    - [`showcase_pages`](#showcase_pages)
-    - [`affiliated_companies`](#affiliated_companies)
-    - [`driver`](#driver-1)
-    - [`get_employees`](#get_employees)
-    - [`scrape(close_on_complete=True)`](#scrapeclose_on_completetrue-1)
-* [Contribution](#contribution)
+## Spis treści
+- [Instalacja](#instalacja)
+- [Konfiguracja](#konfiguracja)
+- [Użytkowanie](#użytkowanie)
+  - [Przykładowe użycie](#przykładowe-użycie)
+  - [Zbieranie danych użytkownika](#zbieranie-danych-użytkownika)
+  - [Zbieranie danych firmy](#zbieranie-danych-firmy)
+  - [Zbieranie danych oferty pracy](#zbieranie-danych-oferty-pracy)
+  - [Zbieranie danych wyszukiwania pracy](#zbieranie-danych-wyszukiwania-pracy)
+  - [Zbieranie danych ze stron wymagających wcześniejszego logowania](#zbieranie-danych-ze-stron-wymagających-wcześniejszego-logowania)
+  - [Zbieranie danych ze stron i automatyczne logowanie](#zbieranie-danych-ze-stron-i-automatyczne-logowanie)
+- [API](#api)
+  - [Osoba](#osoba)
+  - [Firma](#firma)
+- [Wkład](#wkład)
 
-## Instalacja 
+## Instalacja
 
 ```bash
 pip3 install --user linkedin_scraper
@@ -68,10 +42,10 @@ Scrape public LinkedIn profile data at scale with [Proxycurl APIs](https://nubel
 
 Built for developers, by developers.
 
-## Usage
+## Uzycie
 To use it, just create the class.
 
-### Sample Usage
+### Przykladowe Uzycie 
 ```python
 from linkedin_scraper import Person, actions
 from selenium import webdriver
@@ -171,7 +145,7 @@ person = Person("https://www.linkedin.com/in/andre-iguodala-65b48ab5", driver=dr
 
 ## API
 
-### Person
+### Osoba
 A Person object can be created with the following inputs:
 
 ```python
@@ -223,7 +197,7 @@ This is the meat of the code, where execution of this function scrapes the profi
  
 
 
-### Company
+### Firma
 
 ```python
 Company(linkedin_url=None, name=None, about_us=None, website=None, headquarters=None, founded=None, company_type=None, company_size=None, specialties=None, showcase_pages=[], affiliated_companies=[], driver=None, scrape=True, get_employees=True)
@@ -277,6 +251,4 @@ company = Company("https://ca.linkedin.com/company/google", driver=driver)
 #### `scrape(close_on_complete=True)`
 This is the meat of the code, where execution of this function scrapes the company. If *close_on_complete* is True (which it is by default), then the browser will close upon completion. If scraping of other companies are desired, then you might want to set that to false so you can keep using the same driver.
 
-## Contribution
 
-<a href="https://www.buymeacoffee.com/joeyism" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>

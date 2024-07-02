@@ -44,24 +44,18 @@ Scrapes Linkedin User Data
     - [`scrape(close_on_complete=True)`](#scrapeclose_on_completetrue-1)
 * [Contribution](#contribution)
 
-## Installation
+## Instalacja 
 
 ```bash
 pip3 install --user linkedin_scraper
 ```
+## Ustawienia
 
-Version **2.0.0** and before is called `linkedin_user_scraper` and can be installed via `pip3 install --user linkedin_user_scraper`
-
-## Setup
-First, you must set your chromedriver location by
+Najpierw musisz ustawić lokalizację chromedriver poprzez
 
 ```bash
 export CHROMEDRIVER=~/chromedriver
 ```
-
-## Sponsor
-[![rds-cost](https://raw.githubusercontent.com/joeyism/linkedin_scraper/master/docs/proxycurl.png)](https://nubela.co/proxycurl/?utm_campaign=influencer%20marketing&utm_source=github&utm_medium=social&utm_term=-&utm_content=joeyism)
-
 Scrape public LinkedIn profile data at scale with [Proxycurl APIs](https://nubela.co/proxycurl/?utm_campaign=influencer%20marketing&utm_source=github&utm_medium=social&utm_term=-&utm_content=joeyism).
 
 • Scraping Public profiles are battle tested in court in HiQ VS LinkedIn case.<br/>
@@ -91,19 +85,19 @@ person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver
 
 **NOTE**: The account used to log-in should have it's language set English to make sure everything works as expected.
 
-### User Scraping
+### Scraping Użytkowników
 ```python
 from linkedin_scraper import Person
 person = Person("https://www.linkedin.com/in/andre-iguodala-65b48ab5")
 ```
 
-### Company Scraping
+### Scraping Firm
 ```python
 from linkedin_scraper import Company
 company = Company("https://ca.linkedin.com/company/google")
 ```
 
-### Job Scraping
+### Scraping Ofert Pracy
 ```python
 from linkedin_scraper import JobSearch, actions
 from selenium import webdriver
@@ -116,7 +110,7 @@ input("Press Enter")
 job = Job("https://www.linkedin.com/jobs/collections/recommended/?currentJobId=3456898261", driver=driver, close_on_complete=False)
 ```
 
-### Job Search Scraping
+### Scraping Wyszukiwania Ofert Pracy
 ```python
 from linkedin_scraper import JobSearch, actions
 from selenium import webdriver
@@ -135,7 +129,7 @@ job_search = JobSearch(driver=driver, close_on_complete=False, scrape=False)
 job_listings = job_search.search("Machine Learning Engineer") # returns the list of `Job` from the first page
 ```
 
-### Scraping sites where login is required first
+### Scraping stron wymagających logowania
 1. Run `ipython` or `python`
 2. In `ipython`/`python`, run the following code (you can modify it if you need to specify your driver)
 3. 
@@ -161,7 +155,7 @@ person.scrape(close_on_complete=False)
 ``` 
 so it doesn't close.
 
-### Scraping sites and login automatically
+### Scraping stron z automatycznym logowaniem
 From verison **2.4.0** on, `actions` is a part of the library that allows signing into Linkedin first. The email and password can be provided as a variable into the function. If not provided, both will be prompted in terminal.
 
 ```python
@@ -236,7 +230,6 @@ Company(linkedin_url=None, name=None, about_us=None, website=None, headquarters=
 ```
 
 #### `linkedin_url`
-This is the linkedin url of their profile
 
 #### `name`
 This is the name of the company
